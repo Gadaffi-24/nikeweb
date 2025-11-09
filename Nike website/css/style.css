@@ -1,0 +1,794 @@
+/* CSS Reset to normalize styles across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles for the entire website */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* A clear, modern font stack */
+    line-height: 1.6;
+    background-color: #f4f4f4; /* A light grey background for a clean look */
+    color: #333; /* Dark grey for text for good readability */
+}
+
+/* Basic styling for headings */
+h1, h2, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a; /* A darker grey for headings */
+    margin-bottom: 0.5em;
+}
+
+/* Styling for links to make them more visually appealing */
+a {
+    color: #007bff; /* A blue color for links */
+    text-decoration: none; /* Remove the default underline */
+}
+
+/* Navigation menu styling for a consistent header */
+header {
+    background-color: #fff;
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Use Flexbox to align list items horizontally */
+    justify-content: center; /* Center the navigation links */
+    gap: 1em; /* Add space between links */
+}
+
+nav a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Main content and footer styling for structure */
+main {
+    padding: 2em;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    margin-top: 2em;
+}
+
+/* Layout Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* To centre the container on the page */
+    padding: 0 1em;
+}
+
+/* Header and Navigation Layout */
+header {
+    display: flex; /* Enables FlexBox for the Header */
+    justify-content: center; /* Centres the Navigation menu horizontally */
+    align-items: center; /* Vertically aligns items */
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2em; /* Increses space between nav links */
+}
+
+/* Main Content and Section Layout */
+main {
+    display: flex;
+    flex-direction: column; /* Stacks/Places sections vertically */
+    gap: 2em; /* Adds spaces between sections */
+    padding: 2em 0;
+}
+
+section {
+    padding: 1em;
+    background-color: #fff;
+    border: #ddd;
+    border-radius: 8px; /* Adds a nice curve to the corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a neat shadow */
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1em; /* Adds space between gallery images */
+    flex-wrap: wrap; /* Allows images to wrap to the next line on smaller screens */
+}
+
+.image-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Typography Styles */
+h1 {
+    font-size: 2.5em; /* Larger size for the main heading */
+    text-align: center; /* Centres the heading */
+    color: #000;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #eee; /* Adds an underline to headings */
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 1em;
+    color: #444;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    
+    /* Responsive layout adjustments */
+    .container {
+        padding: 0 0.5em;
+    }
+
+    main {
+        padding: 1em 0;
+    }
+
+    section {
+        padding: 0.5em;
+    }
+
+    /* Responsive navigation menu adjustments */
+    header {
+        padding: 0.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    /* Responsive typography adjustments */
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+    }
+
+    .image-gallery img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*CSS Pseudo- Classes for Interactive Elements */
+nav a:hover {
+    color: #007bff; /* Changes the link color to blue whilst on hover */
+    text-decoration: underline; /* Adds underlines on hover */
+}
+
+/* --- Product Page Specific Styling (Nike Aesthetic) --- */
+
+/* Main Headings */
+main h1 {
+    font-size: 3.5em; /* Large, bold heading */
+    font-weight: 900;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+main p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 2em;
+}
+
+/* Category Sections */
+.product-category-section {
+    padding-top: 2em;
+    border-top: 1px solid #eee; /* Subtle separator */
+}
+
+.product-category-section h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 1em;
+    color: #111;
+    border-bottom: none; /* Override Day 2 border */
+}
+
+/* Product Grid Layout (CSS Grid) */
+.product-gallery {
+    display: grid;
+    /* Responsive grid with a minimum card width of 320px */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; /* Space between cards */
+    padding-bottom: 3em;
+}
+
+/* Individual Product Card Styling */
+.product-card {
+    background-color: #f7f7f7; /* Light grey background for a clean look */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle lift effect on hover */
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-details {
+    padding: 1.5em;
+    text-align: left;
+}
+
+.product-details h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.product-price {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.5em;
+}
+
+/* Option Selector Styling (Sizes/Colors) */
+.option-selector {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.option-selector h4 {
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #777;
+    margin-bottom: 0.5em;
+}
+
+.options {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.option-item {
+    padding: 0.4em 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 50px; /* Pill shape for sizes/colors */
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.option-item:hover {
+    border-color: #000;
+}
+
+/* Add to Cart Button Styling */
+.add-to-cart {
+    display: block; /* Makes the button fill the width */
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 1em;
+    margin-top: 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #01e6ff;
+}
+
+/* --- Responsive Adjustments for Product Page --- */
+@media (max-width: 768px) {
+    .product-category-section h2 {
+        text-align: center;
+    }
+    .product-details {
+        text-align: center; /* Center details on mobile */
+    }
+    .options {
+        justify-content: center; /* Center options on mobile */
+    }
+}
+
+/* Ensure all product images have a neat and consistent size */
+.product-card img {
+    height: 300px; /* Set a consistent height for all main product images */
+    width: 100%; 
+    object-fit: cover; /* This ensures images cover the height without stretching, cropping as needed */
+    display: block;
+}
+
+
+/* --- Cart Page Layout (Split Grid) --- */
+
+/* Main heading adjustments for cart */
+main h1 {
+    font-size: 2.8em;
+    font-weight: 800;
+    text-align: left; /* Aligns left, like a modern checkout */
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+}
+
+/* Container for the main cart area */
+.cart-container {
+    display: grid;
+    /* Two columns: 65% for items, 30% for summary, with a gap */
+    grid-template-columns: 2fr 1fr; 
+    gap: 40px;
+    padding: 2em 0;
+}
+
+/* --- Cart Items Section (Left Column) --- */
+
+.cart-items {
+    border-right: 1px solid #eee; /* Subtle vertical separator */
+    padding-right: 40px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center; /* Vertically align image and text */
+    padding: 1.5em 0;
+    border-bottom: 1px solid #eee;
+    position: relative; /* Needed to position the remove button */
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+.cart-item img {
+    width: 120px; /* Fixed size for item image */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.item-details {
+    flex-grow: 1; /* Allows details to take up remaining space */
+}
+
+.item-details h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+}
+
+.item-price {
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.5em;
+}
+
+.item-options span {
+    font-size: 0.9em;
+    color: #666;
+    display: block; /* Each option on its own line */
+}
+
+/* Quantity Selector Styling */
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.quantity-btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Circular buttons */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.quantity-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.quantity-value {
+    font-weight: 600;
+    padding: 0 5px;
+}
+
+/* Remove Button Styling */
+.remove-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: underline;
+    transition: color 0.2s;
+    margin-left: auto; /* Pushes the button to the far right */
+    position: absolute;
+    right: 0;
+    top: 1.5em;
+}
+
+.remove-btn:hover {
+    color: #d9534f; /* Subtle red hover for removal */
+}
+
+
+/* --- Cart Summary Section (Right Column) --- */
+
+.cart-summary {
+    background-color: #f7f7f7; /* Slightly darker background to stand out */
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Keeps the box tight to its content */
+}
+
+.cart-summary h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5em;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8em;
+    font-size: 1em;
+}
+
+.summary-line p {
+    margin: 0;
+    text-align: left; /* Overrides general main p styling */
+    color: #333;
+}
+
+.total-line {
+    border-top: 2px solid #000; /* Bold separator for total */
+    padding-top: 1em;
+    margin-top: 1em;
+}
+
+.total-line h3 {
+    font-size: 1.4em;
+    font-weight: 800;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    display: block;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 1em;
+    margin-top: 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #01e6ff;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .cart-container {
+        /* Stack the columns vertically on smaller screens */
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+
+    .cart-items {
+        border-right: none; /* Remove vertical line when stacked */
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .cart-item {
+        flex-direction: column; /* Stack image and details on mobile */
+        align-items: flex-start;
+        padding-bottom: 2em;
+    }
+
+    .cart-item img {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+
+    .remove-btn {
+        position: static; /* Move button below the item details */
+        margin-top: 10px;
+        font-size: 1em;
+    }
+}
+
+
+/* --- Payment Page Styling --- */
+
+/* Main content container for the payment page */
+main.payment-container {
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto; /* Center the form on the page */
+}
+
+/* Style the main heading for the payment page */
+main h1 {
+    font-size: 2.5em;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style the form container to be a prominent card */
+form {
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+}
+
+/* Style the paragraph within the form */
+form p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Style the total amount display section */
+.total-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.total-display h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.total-amount {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: #000;
+}
+
+/* Style all form labels */
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Style all text input fields */
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1em;
+}
+
+/* Add a focus and hover effect for inputs */
+input[type="text"]:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    outline: none; /* Removes the default outline */
+}
+
+/* Style the container for the expiry date to be on one line */
+.expiry-date-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the month and year inputs */
+}
+
+.expiry-date-container input {
+    width: 50%;
+}
+
+/* Style the separator between month and year */
+.expiry-date-container span {
+    font-size: 1.5em;
+    color: #666;
+}
+
+/* Style the Pay Now button */
+button[type="submit"] {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+    background-color: #01e6ff;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+
+/* --- Sign Up Page Styling --- */
+
+/* Main content container for the sign-up page */
+main.signup-container {
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: 0 auto; /* Center the form on the page */
+}
+
+/* Style the form container to be a prominent card */
+main.signup-container form {
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+}
+
+/* Style the main heading for the sign-up page */
+main.signup-container h1 {
+    font-size: 2.2em;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style the paragraph within the form */
+main.signup-container form p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Style the profile picture upload section */
+.profile-pic-upload {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-pic-upload label[for="profile-picture"] {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Hide the default, ugly file input button */
+.file-input {
+    display: none;
+}
+
+/* Style the custom button for file upload */
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-label:hover {
+    background-color: #01e6ff;
+}
+
+/* Style all form labels */
+main.signup-container label {
+    display: block;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Style all text input fields */
+main.signup-container input[type="text"],
+main.signup-container input[type="email"],
+main.signup-container input[type="password"],
+main.signup-container input[type="tel"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1em;
+}
+
+/* Add a focus effect for inputs */
+main.signup-container input:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    outline: none; /* Removes the default outline */
+}
+
+/* Style the Sign Up button */
+main.signup-container button[type="submit"] {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+main.signup-container button[type="submit"]:hover {
+    background-color: #01e6ff;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
